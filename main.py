@@ -1,5 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from urllib.parse import urlparse, parse_qs
+
+# from urllib.parse import urlparse, parse_qs
 
 hostName = "localhost"  # Адрес для доступа по локальной сети
 serverPort = 8080  # Порт доступа
@@ -35,7 +36,7 @@ class MyServer(BaseHTTPRequestHandler):
         Метод обработки GET-запросов
         """
 
-        #query_components = parse_qs(urlparse(self.path).query)
+        # query_components = parse_qs(urlparse(self.path).query)
         page_content = self.__get_html_content()
         self.send_response(200)  # Отправка кода ответа
         self.send_header("Content-type", "text/html")  # Отправка типа данных, который будет передаваться
